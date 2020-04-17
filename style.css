@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+}
+
+#title-container{
+    background-color: blue;
+    text-align: center;
+    padding: 4rem 0 4rem 0;
+}
+
+#game-title{
+    font-weight: 700;
+    font-size: 6rem;
+}
+
+#subtitle{
+    font-size: 2rem;
+    font-style: italic;
+    padding-top: 2rem;
+}
+
+#game-interface-container{
+    text-align: center;
+    border: 2px solid black;
+    padding: 4rem 0 4rem 0;
+}
+
+#game-interface-container h2{
+    font-size: 3rem;
+}
+
+#buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem 0 2rem 0;
+}
+
+#buttons-container div{
+    display: flex;
+    width: 15rem;
+    height: 15rem;
+    margin: 0 2rem 0 2rem;
+    border: 7px solid black;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+#buttons-container div:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
+#buttons-container div i{
+    font-size: 8rem;
+    margin: auto 0 auto 0;
+}
+
+#game-results-container{
+    margin-top: 2rem;
+}
+
+#game-results-container h2{
+    text-align: center;
+    font-size: 3rem;
+}
+
+#game-results-container p{
+    font-size: 2rem;
+    text-align: left;
+}
+
+#scores{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#scores h3{
+    font-size: 2rem;
+    margin: 0 2rem 0 2rem;
+}

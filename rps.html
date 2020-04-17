@@ -1,74 +1,34 @@
-<script>
+<head>
+    <script src="https://kit.fontawesome.com/33a16c0a84.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<main>
+    <div id = 'title-container'>
+        <h1 id="game-title">Rock, Paper, Scissors</h1>
+        <p id="subtitle">a game by luka stanojevic</p>
+    </div>
+    <div id="game-interface-container">
+        <h2>Choose Your Play</h2>
+        <div id="buttons-container">
+            <div id="rock-div">
+              <i class="far fa-hand-rock" id="rock"></i>
+            </div>
+            <div id = "paper-div">
+                <i class="far fa-hand-paper" id="paper"></i>
+            </div>
+            <div id = "scissors-div">
+                <i class="far fa-hand-scissors" id="scissors"></i>
+            </div>
+        </div>
+    </div>
+    <div id="game-results-container">
+        <h2>Game Results</h2>
+        <div id="scores">
+            <h3 id="your-score">Your Score: 0</h3>
+            <h3 id="computer-score">Computer's Score: 0</h3>
+        </div>
 
-function game(){
-    console.log("Play a best-of 5 against the PC:")
+    </div>
 
-    let playerWinCounter = 0; //Keep track of wins.
-    let computerWinCounter = 0; // Keep track of losses.
-    let tieCounter = 0; // Keep track of ties.
-    
-    let i; //loop counter
-
-    for(i=0; i<5; i++){    
-
-    let playerSelection = prompt("Choose rock, paper or scissors:"); // Get player input.
-    playerSelection = playerSelection.toLowerCase(); // Normalize for case.
-
-    let computerSelection = computerPlay(); // Randomize computer's choice.
-
-    let result = playRound(playerSelection, computerSelection); // Get the result of each round.
-
-// Below we increment the win/loss/tie counters based on the result.
-
-        if (result === 1){
-            playerWinCounter++;
-        }
-
-        else if (result === 0){
-            computerWinCounter++;
-        }
-
-        else {tieCounter++;};
-    }
-
-// We log the result of each round after it is complete.
-
-    console.log(`You won ${playerWinCounter} rounds, lost ${computerWinCounter} rounds, and tied ${tieCounter} rounds!`);
-    };
-
-// Function that chooses the computer's hand.
-
-    function computerPlay(){
-        let selector = Math.floor(Math.random()*3);
-        if (selector<1){
-            return "rock";
-        }
-        else if (selector>=1 && selector <2){
-            return "paper";
-        }
-        else{
-            return "scissors";
-        }
-    }
-
-// Function that determines outcome based on choices.
-
-    function playRound(playerSelection, computerSelection){
-        if (playerSelection === computerSelection){
-            console.log(`You both picked ${playerSelection}, the game is tied!`);
-        }
-        else if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'scissors' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'rock'){
-            console.log(`You win, ${playerSelection} beats ${computerSelection}!`);
-            return 1;
-        }
-        else{
-            console.log(`You lose, ${computerSelection} beats ${playerSelection}!`);
-            return 0;
-        }
-    }
-
-//Execute the game
-
-    game(); 
-
-</script>
+    <script type="text/javascript" src="rps_script.js"></script>
+</main>
