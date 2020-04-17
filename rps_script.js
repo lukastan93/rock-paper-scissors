@@ -4,6 +4,8 @@ const scissorsButton = document.querySelector('#scissors-div');
 const resultSection = document.querySelector('#game-results-container');
 const yourScore = document.querySelector('#your-score');
 const computerScore = document.querySelector('#computer-score');
+const computerIconContainer = document.querySelector('#computer-play-container');
+const computerIcon = document.createElement('i');
 
 let winCount = 0;
 let lossCount = 0;
@@ -30,12 +32,18 @@ scissorsButton.addEventListener('click', (e) => {
     function computerPlay(){
         let selector = Math.floor(Math.random()*3);
         if (selector<1){
+            computerIcon.setAttribute('class', 'far fa-hand-rock');
+            computerIconContainer.appendChild(computerIcon);
             return "rock";
         }
         else if (selector>=1 && selector <2){
+            computerIcon.setAttribute('class', 'far fa-hand-paper');
+            computerIconContainer.appendChild(computerIcon);
             return "paper";
         }
         else{
+            computerIcon.setAttribute('class', 'far fa-hand-scissors');
+            computerIconContainer.appendChild(computerIcon);
             return "scissors";
         }
     }
@@ -78,9 +86,10 @@ scissorsButton.addEventListener('click', (e) => {
             lossCount=0;
             computerScore.textContent = `Computer's Score: ${lossCount}`;
             for (i=0 ; i<roundCount ; i++){
-            const pastScores = document.querySelector('.result');
-            resultSection.removeChild(pastScores);
+                const pastScores = document.querySelector('.result');
+                resultSection.removeChild(pastScores);
             }
+            computerIconContainer.removeChild(computerIcon);
             roundCount=0;
         }
 
@@ -94,6 +103,7 @@ scissorsButton.addEventListener('click', (e) => {
                 const pastScores = document.querySelector('.result');
                 resultSection.removeChild(pastScores);
                 }
+            computerIconContainer.removeChild(computerIcon);
             roundCount=0;
         }
 

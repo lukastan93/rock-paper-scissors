@@ -8,7 +8,7 @@
 }
 
 #title-container{
-    background-color: blue;
+    background-color: #bff5f1;
     text-align: center;
     padding: 4rem 0 4rem 0;
 }
@@ -25,23 +25,32 @@
 }
 
 #game-interface-container{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
     border: 2px solid black;
+}
+
+#player-container{
+    display:flex;
+    width:50%;
+    text-align: center;
+    flex-direction:column;
+    background-color:#4bc95e;
     padding: 4rem 0 4rem 0;
 }
 
-#game-interface-container h2{
+h2{
     font-size: 3rem;
 }
 
-#buttons-container{
+#player-buttons-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 2rem 0 2rem 0;
 }
 
-#buttons-container div{
+#player-buttons-container div{
     display: flex;
     width: 15rem;
     height: 15rem;
@@ -51,15 +60,42 @@
     justify-content: center;
 }
 
-#buttons-container div:hover{
+#player-buttons-container div:hover{
     background-color: orange;
     cursor: pointer;
 }
 
-#buttons-container div i{
+#player-buttons-container div i{
     font-size: 8rem;
     margin: auto 0 auto 0;
 }
+
+#computer-container{
+    padding:4rem 0 4rem 0;
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    background-color:#de3131;
+    text-align: center;
+    align-items:center;
+}
+
+#computer-play-container{
+    display: flex;
+    width: 15rem;
+    height: 15rem;
+    margin: 0 2rem 0 2rem;
+    border: 7px solid black;
+    border-radius: 20px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#computer-play-container i{
+    font-size: 8rem;
+    margin: auto 0 auto 0;
+}
+
 
 #game-results-container{
     margin-top: 2rem;
@@ -68,9 +104,11 @@
 #game-results-container h2{
     text-align: center;
     font-size: 3rem;
+    padding-bottom: 2rem;
 }
 
 #game-results-container p{
+    margin-left: 1rem;
     font-size: 2rem;
     text-align: left;
 }
